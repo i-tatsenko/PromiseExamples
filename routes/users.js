@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-var userIds = [1, 2, 3];
+var users = [
+    {id: 1, name: 'John'},
+    {id: 2, name: 'Darek'},
+    {id: 3, name: 'Bill'}];
 
 var orders = {
     "1": {
@@ -33,7 +36,7 @@ var items = {
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-    res.json(userIds);
+    res.json(users);
 });
 
 router.get(/\/(\d+)\/orders/, function (req, res) {
